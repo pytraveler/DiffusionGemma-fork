@@ -1,4 +1,4 @@
-## [fork](https://github.com/danielhanchen/llama.cpp/tree/diffusion-visual-updates) by (danielhanchen)[https://github.com/danielhanchen].
+## [fork](https://github.com/danielhanchen/llama.cpp/tree/diffusion-visual-updates) by [danielhanchen](https://github.com/danielhanchen).
 
 # llama.cpp
 
