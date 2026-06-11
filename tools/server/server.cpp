@@ -167,6 +167,7 @@ int llama_server(int argc, char ** argv) {
         routes.post_lora_adapters          = models_routes->proxy_post;
         routes.get_slots                   = models_routes->proxy_get;
         routes.post_slots                  = models_routes->proxy_post;
+        routes.post_diffusion             = models_routes->proxy_post;
 
         // custom routes for router
         routes.get_props                   = models_routes->get_router_props;
@@ -202,6 +203,9 @@ int llama_server(int argc, char ** argv) {
     ctx_http.post("/reranking",                ex_wrapper(routes.post_rerank));
     ctx_http.post("/v1/rerank",                ex_wrapper(routes.post_rerank));
     ctx_http.post("/v1/reranking",             ex_wrapper(routes.post_rerank));
+    // Diffusion
+    ctx_http.post("/v1/diffusion/completions", ex_wrapper(routes.post_diffusion));
+    ctx_http.post("/diffusion/completions",    ex_wrapper(routes.post_diffusion));
     ctx_http.post("/tokenize",                 ex_wrapper(routes.post_tokenize));
     ctx_http.post("/detokenize",               ex_wrapper(routes.post_detokenize));
     ctx_http.post("/apply-template",           ex_wrapper(routes.post_apply_template));
